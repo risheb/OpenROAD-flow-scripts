@@ -598,7 +598,7 @@ endif
 $(RESULTS_DIR)/5_route.odb: $(RESULTS_DIR)/5_2_route.odb
 	cp $< $@
 
-$(RESULTS_DIR)/5_route.sdc: $(RESULTS_DIR)/4_cts.sdc
+$(RESULTS_DIR)/5_route.sdc: $(RESULTS_DIR)/5_route.sdc
 	cp $< $@
 
 $(RESULTS_DIR)/5_route.v:

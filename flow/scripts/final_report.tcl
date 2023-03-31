@@ -4,6 +4,10 @@ load_design 6_1_fill.odb 6_1_fill.sdc "Starting final report"
 
 set_propagated_clock [all_clocks]
 
+#Updated for clean gds
+repair_design
+repair_timing -hold_margin 0.0 -setup_margin 0.0
+
 # Ensure all OR created (rsz/cts) instances are connected
 global_connect
 

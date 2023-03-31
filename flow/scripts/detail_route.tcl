@@ -54,10 +54,13 @@ detailed_route -output_drc $::env(REPORTS_DIR)/5_route_drc.rpt \
                -output_maze $::env(RESULTS_DIR)/maze.log \
                {*}$arguments
 
+repair_timing -hold_margin 0.0 -setup_margin 0.0
+
 if { [info exists ::env(POST_DETAIL_ROUTE_TCL)] } {
   source $::env(POST_DETAIL_ROUTE_TCL)
 }
 
 if {![info exists save_checkpoint] || $save_checkpoint} {
   write_db $::env(RESULTS_DIR)/5_2_route.odb
+  write_sdc $::env(RESULTS_DIR)/5_route.odb
 }

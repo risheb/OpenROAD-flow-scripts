@@ -72,7 +72,7 @@ if { [info exists ::env(HOLD_SLACK_MARGIN)] && $::env(HOLD_SLACK_MARGIN) > 0.0} 
   append additional_args " -hold_margin $::env(HOLD_SLACK_MARGIN)"
 }
 
-repair_timing {*}$additional_args
+repair_timing {*}$additional_args -reapir_tns 100
 
 detailed_placement
 check_placement -verbose
